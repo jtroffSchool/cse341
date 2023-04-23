@@ -1,0 +1,7 @@
+@hostname=http://localhost:3000
+
+get {{hostname}}
+
+###
+
+get {{hostname}}/username?id=6444393e3d877801634aef51
