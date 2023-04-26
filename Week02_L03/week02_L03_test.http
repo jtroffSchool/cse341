@@ -1,0 +1,37 @@
+@hostname=http://localhost:3000
+
+get {{hostname}}
+
+###
+
+get {{hostname}}/user?id=6448a2f521bf3ddd97025498
+
+###
+
+post {{hostname}} 
+Content-Type: application/json
+
+{
+    "firstName": "Jeremy", 
+    "lastName": "Troff", 
+    "email": "jtroff77@gmail.com", 
+    "favoriteColor": "Blue", 
+    "birthday": "11/19/1992"
+}
+
+###
+
+put {{hostname}}/user?id=6448a2f521bf3ddd97025498
+Content-Type: application/json
+
+{
+    "firstName": "Jeremy", 
+    "lastName": "Troff", 
+    "email": "jtroff77@gmail.com", 
+    "favoriteColor": "Black", 
+    "birthday": "11/19/1992"
+}
+
+###
+
+delete {{hostname}}/user?id=6448a2f521bf3ddd97025498
