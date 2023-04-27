@@ -59,7 +59,7 @@ const updateContact = async (req, res) => {
 		.collection('User')
 		.replaceOne({ _id: objectId }, contact);
 	if (response.modifiedCount > 0) {
-		res.status(200).send();
+		res.status(204).send();
 	} else {
 		res
 			.status(500)

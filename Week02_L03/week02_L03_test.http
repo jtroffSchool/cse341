@@ -1,4 +1,5 @@
 @hostname=http://localhost:3000
+@prodname=https://jtroffweek02l03.onrender.com
 
 get {{hostname}}
 
@@ -35,3 +36,41 @@ Content-Type: application/json
 ###
 
 delete {{hostname}}/user?id=6448a2f521bf3ddd97025498
+
+###
+
+get {{prodname}}
+
+###
+
+get {{prodname}}/user?id=6448a2f521bf3ddd97025498
+
+###
+
+post {{prodname}} 
+Content-Type: application/json
+
+{
+    "firstName": "Jeremy", 
+    "lastName": "Troff", 
+    "email": "jtroff77@gmail.com", 
+    "favoriteColor": "Blue", 
+    "birthday": "11/19/1992"
+}
+
+###
+
+put {{prodname}}/user?id=6449f08abcf00d10c195aa97
+Content-Type: application/json
+
+{
+    "firstName": "Jeremy", 
+    "lastName": "Troff", 
+    "email": "jtroff77@gmail.com", 
+    "favoriteColor": "Black", 
+    "birthday": "11/19/1992"
+}
+
+###
+
+delete {{prodname}}/user?id=6449f08abcf00d10c195aa97
