@@ -15,7 +15,7 @@ const getAllContacts = async (req, res) => {
 
 const getSingleContact = async (req, res) => {
 	try {
-		const objectId = new ObjectId(req.query.id);
+		const objectId = new ObjectId(req.params.id);
 		const result = await mongodb
 			.getDb()
 			.db('L02')
@@ -58,7 +58,7 @@ const createContact = async (req, res) => {
 
 const updateContact = async (req, res) => {
 	try {
-		const objectId = new ObjectId(req.query.id);
+		const objectId = new ObjectId(req.params.id);
 		const contact = {
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
@@ -85,7 +85,7 @@ const updateContact = async (req, res) => {
 
 const deleteContact = async (req, res) => {
 	try {
-		const objectId = new ObjectId(req.query.id);
+		const objectId = new ObjectId(req.params.id);
 		const response = await mongodb
 			.getDb()
 			.db('L02')
