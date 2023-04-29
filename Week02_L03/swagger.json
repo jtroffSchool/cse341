@@ -11,14 +11,14 @@
     "https"
   ],
   "paths": {
-    "/api-docs": {
+    "/api-docs/api-docs": {
       "get": {
         "description": "",
         "parameters": [],
         "responses": {}
       }
     },
-    "/contacts/": {
+    "/": {
       "get": {
         "description": "",
         "produces": [
@@ -69,7 +69,7 @@
         }
       }
     },
-    "/contacts/user": {
+    "/user": {
       "get": {
         "description": "",
         "produces": [
