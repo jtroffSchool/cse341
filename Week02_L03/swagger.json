@@ -8,10 +8,17 @@
   "host": "jtroffweek02l03.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
-    "/": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/contacts/": {
       "get": {
         "description": "",
         "produces": [
@@ -62,7 +69,7 @@
         }
       }
     },
-    "/user": {
+    "/contacts/user": {
       "get": {
         "description": "",
         "produces": [
