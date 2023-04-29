@@ -18,7 +18,7 @@
         "responses": {}
       }
     },
-    "/": {
+    "/contacts/": {
       "get": {
         "description": "",
         "produces": [
@@ -28,6 +28,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -69,13 +72,19 @@
         }
       }
     },
-    "/user": {
+    "/contacts/{id}": {
       "get": {
         "description": "",
         "produces": [
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "id",
             "in": "query",
@@ -85,12 +94,21 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
         "description": "",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "id",
             "in": "query",
@@ -133,6 +151,12 @@
       "delete": {
         "description": "",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "id",
             "in": "query",
