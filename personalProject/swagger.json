@@ -13,14 +13,22 @@
   "paths": {
     "/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Redirect"
+        ],
+        "summary": "Redirects base url",
+        "description": "Just redirects base url to /games",
         "parameters": [],
         "responses": {}
       }
     },
     "/games/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Games"
+        ],
+        "summary": "Get all games",
+        "description": "Get all the games from the database",
         "produces": [
           "application/json"
         ],
@@ -35,7 +43,11 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Games"
+        ],
+        "summary": "Add new game",
+        "description": "Provide values to the fields to add a new game",
         "parameters": [
           {
             "name": "body",
@@ -83,7 +95,11 @@
     },
     "/games/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Games"
+        ],
+        "summary": "Get desired game",
+        "description": "Enter an id to get the corresponding game",
         "produces": [
           "application/json"
         ],
