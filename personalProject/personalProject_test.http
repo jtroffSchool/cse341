@@ -1,0 +1,48 @@
+@hostname=http://localhost:3000
+@prodname=https://jtroffpersonalProject.onrender.com
+
+get {{hostname}}/games
+
+###
+
+get {{hostname}}/games/645323ac801ddf655438777a
+
+###
+
+post {{hostname}}/games
+Content-Type: application/json
+
+{
+    "gameName": "Telestrations",
+    "creator": "Unknown",
+    "gameType": "Board Game",
+    "gameGenre": "Party",
+    "numberPlayers": "4-8",
+    "playTime": "30 Min",
+    "difficultyToLearn": "Easy",
+    "recommended": "7/10"
+}
+
+###
+
+get {{prodname}}/games
+
+###
+
+get {{prodname}}/games/644d9a03575d076bff7ef726
+
+###
+
+post {{prodname}}/games
+Content-Type: application/json
+
+{
+    "gameName": "Azul",
+    "creator": "Michael Kiesling",
+    "gameType": "Board Game",
+    "gameGenre": "Strategy",
+    "numberPlayers": "2-4",
+    "playTime": "30-45 Min",
+    "difficultyToLearn": "Standard",
+    "recommended": "8/10"
+}
