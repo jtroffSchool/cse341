@@ -5,11 +5,27 @@ get {{hostname}}/games
 
 ###
 
-get {{hostname}}/games/645323ac801ddf655438777a
+get {{hostname}}/games/6453307a0b939d53b49b5722
 
 ###
 
 post {{hostname}}/games
+Content-Type: application/json
+
+{
+    "gameName": "Telestration",
+    "creator": "Unknown",
+    "gameType": "Board Game",
+    "gameGenre": "Party",
+    "numberPlayers": "4-8",
+    "playTime": "30 Min",
+    "difficultyToLearn": "Easy",
+    "recommended": "7/10"
+}
+
+###
+
+put {{hostname}}/games/6453307a0b939d53b49b5722
 Content-Type: application/json
 
 {
@@ -25,6 +41,10 @@ Content-Type: application/json
 
 ###
 
+delete {{hostname}}/games/6453307a0b939d53b49b5722
+
+###
+
 get {{prodname}}/games
 
 ###
@@ -37,12 +57,32 @@ post {{prodname}}/games
 Content-Type: application/json
 
 {
-    "gameName": "Azul",
-    "creator": "Michael Kiesling",
+    "gameName": "Telestration",
+    "creator": "Unknown",
     "gameType": "Board Game",
-    "gameGenre": "Strategy",
-    "numberPlayers": "2-4",
-    "playTime": "30-45 Min",
-    "difficultyToLearn": "Standard",
-    "recommended": "8/10"
+    "gameGenre": "Party",
+    "numberPlayers": "4-8",
+    "playTime": "30 Min",
+    "difficultyToLearn": "Easy",
+    "recommended": "7/10"
 }
+
+###
+
+put {{prodname}}/games/6453307a0b939d53b49b5722
+Content-Type: application/json
+
+{
+    "gameName": "Telestrations",
+    "creator": "Unknown",
+    "gameType": "Board Game",
+    "gameGenre": "Party",
+    "numberPlayers": "4-8",
+    "playTime": "30 Min",
+    "difficultyToLearn": "Easy",
+    "recommended": "7/10"
+}
+
+###
+
+delete {{prodname}}/games/6453307a0b939d53b49b5722

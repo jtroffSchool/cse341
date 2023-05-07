@@ -32,6 +32,9 @@ const getSingleGame = async (req, res) => {
 		//#swagger.tags=['Games']
 		//#swagger.summary=Get desired game
 		//#swagger.description=Enter an id to get the corresponding game
+		if (!ObjectId.isValid(req.params.id)) {
+			res.status(400).json('Must use a valid game id to find a game.');
+		}
 		const objectId = new ObjectId(req.params.id);
 		const result = await mongodb
 			.getDb()
@@ -79,9 +82,73 @@ const createGame = async (req, res) => {
 	}
 };
 
+const updateGame = async (req, res) => {
+	try {
+		//#swagger.tags=['Games']
+		//#swagger.summary=Update existing game
+		//#swagger.description=Update game based on Id passed
+		if (!ObjectId.isValid(req.params.id)) {
+			res.status(400).json('Must use a valid game id to update a game.');
+		}
+		const objectId = new ObjectId(req.params.id);
+		const game = {
+			gameName: req.body.gameName,
+			creator: req.body.creator,
+			gameType: req.body.gameType,
+			gameGenre: req.body.gameGenre,
+			numberPlayers: req.body.numberPlayers,
+			playTime: req.body.playTime,
+			difficultyToLearn: req.body.difficultyToLearn,
+			recommended: req.body.recommended,
+		};
+		const response = await mongodb
+			.getDb()
+			.db('board_card_games')
+			.collection('games')
+			.replaceOne({ _id: objectId }, game);
+		if (response.modifiedCount > 0) {
+			res.status(204).send();
+		} else {
+			res
+				.status(500)
+				.json(response.error || 'Could not update game due to some error.');
+		}
+	} catch (err) {
+		res.status(500).json({ message: err.message });
+	}
+};
+
+const deleteGame = async (req, res) => {
+	try {
+		//#swagger.tags=['Games']
+		//#swagger.summary=Delete existing game
+		//#swagger.description=Delete game based on Id passed
+		if (!ObjectId.isValid(req.params.id)) {
+			res.status(400).json('Must use a valid game id to delete a game.');
+		}
+		const objectId = new ObjectId(req.params.id);
+		const response = await mongodb
+			.getDb()
+			.db('board_card_games')
+			.collection('games')
+			.deleteOne({ _id: objectId });
+		if (response.deletedCount > 0) {
+			res.status(200).send();
+		} else {
+			res
+				.status(500)
+				.json(response.error || 'Could not delete user due to some error.');
+		}
+	} catch (err) {
+		res.status(500).json({ message: err.message });
+	}
+};
+
 module.exports = {
 	redirectBase,
 	getAllGames,
 	getSingleGame,
 	createGame,
+	updateGame,
+	deleteGame,
 };
