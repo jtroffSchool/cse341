@@ -1,12 +1,12 @@
 const mongodb = require('../db/connect');
 const { ObjectId } = require('mongodb');
 
-const redirectBase = async (req, res) => {
-	//#swagger.tags=['Redirect']
-	//#swagger.summary=Redirects base url
-	//#swagger.description=Just redirects base url to /games
-	res.redirect(['/games']);
-};
+// const redirectBase = async (req, res) => {
+// 	//#swagger.tags=['Redirect']
+// 	//#swagger.summary=Redirects base url
+// 	//#swagger.description=Just redirects base url to /games
+// 	res.redirect(['/games']);
+// };
 
 const getAllGames = async (req, res) => {
 	try {
@@ -145,7 +145,7 @@ const deleteGame = async (req, res) => {
 };
 
 module.exports = {
-	redirectBase,
+	//redirectBase,
 	getAllGames,
 	getSingleGame,
 	createGame,
