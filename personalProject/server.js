@@ -3,6 +3,7 @@ const mongodb = require('./db/connect');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
+const cors = require('cors');
 const GitHubStrategy = require('passport-github2').Strategy;
 
 const swaggerUi = require('swagger-ui-express');
