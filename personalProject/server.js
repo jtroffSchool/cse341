@@ -27,7 +27,7 @@ app
 	.use((req, res, next) => {
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.setHeader(
-			'Access-Control-Allow-Header',
+			'Access-Control-Allow-Headers',
 			'Origin, X-Requested-With, Content-Type, Accept, Z-Key, Authorization'
 		);
 		res.setHeader(
@@ -38,7 +38,7 @@ app
 	})
 	.use(cors({ methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'] }))
 	.use(cors({ origin: '*' }))
-	.use('/', require('./routes'));
+	.use('/', require('./routes/index'));
 
 passport.use(
 	new GitHubStrategy(
@@ -72,7 +72,7 @@ app.get('/', (req, res) => {
 });
 
 app.get(
-	'github/callback',
+	'/github/callback',
 	passport.authenticate('github', {
 		failureRedirect: '/api-docs',
 		session: false,
