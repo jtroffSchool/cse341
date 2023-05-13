@@ -17,6 +17,7 @@ app
 			secret: 'secret',
 			resave: false,
 			saveUninitialized: true,
+			user: 'Jeremy Troff',
 		})
 	)
 	//This is the basic express session({..}) initialization.
@@ -49,7 +50,7 @@ passport.use(
 		},
 		function (accessToken, refreshToken, profile, done) {
 			//User.findOrCreate({github: profile.id }, function(err, user){
-			return done('Jeremy Troff', profile);
+			return done(null, profile);
 			//});
 		}
 	)
