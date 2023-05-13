@@ -49,7 +49,7 @@ passport.use(
 		},
 		function (accessToken, refreshToken, profile, done) {
 			//User.findOrCreate({github: profile.id }, function(err, user){
-			return done(null, profile);
+			return done('Jeremy Troff', profile);
 			//});
 		}
 	)
