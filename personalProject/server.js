@@ -48,9 +48,9 @@ passport.use(
 			callbackURL: process.env.CALLBACK_URL,
 		},
 		function (accessToken, refreshToken, profile, done) {
-			User.findOrCreate({ github: profile.id }, function (err, user) {
-				return done(null, user);
-			});
+			//User.findOrCreate({github: profile.id }, function(err, user){
+			return done(null, profile);
+			//});
 		}
 	)
 );
