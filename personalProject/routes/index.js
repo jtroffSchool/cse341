@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const gamesController = require('../controllers/index');
 const passport = require('passport');
 
 router.use('/', require('./swagger'));
 router.use('/games', require('./games'));
+router.use('/players', require('./players'));
 
 router.get('/login', passport.authenticate('github'), (req, res) => {});
 

@@ -24,6 +24,28 @@ const saveGame = (req, res, next) => {
 	});
 };
 
+const savePlayer = (req, res, next) => {
+	const validationRule = {
+		firstName: 'required|string',
+		lastName: 'required|string',
+		phone: 'required|string',
+		email: 'required|email',
+		favoriteGenre: 'required|string',
+	};
+	validator(req.body, validationRule, {}, (err, status) => {
+		if (!status) {
+			res.status(412).send({
+				success: false,
+				message: 'Validation failed',
+				data: err,
+			});
+		} else {
+			next();
+		}
+	});
+};
+
 module.exports = {
 	saveGame,
+	savePlayer,
 };
