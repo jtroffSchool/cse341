@@ -45,6 +45,44 @@ delete {{hostname}}/games/6453307a0b939d53b49b5722
 
 ###
 
+get {{hostname}}/players
+
+###
+
+get {{hostname}}/players/6453307a0b939d53b49b5722
+
+###
+
+post {{hostname}}/players
+Content-Type: application/json
+
+{
+    "firstName": "Caitlyn",
+    "lastName": "Rubow",
+    "phone": "NA",
+    "email": "caitRubow77@gmail.com",
+    "favoriteGenre": "Party"
+}
+
+###
+
+put {{hostname}}/players/6453307a0b939d53b49b5722
+Content-Type: application/json
+
+{
+    "firstName": "Cait",
+    "lastName": "Rubow",
+    "phone": "NA",
+    "email": "caitRubow77@gmail.com",
+    "favoriteGenre": "Party"
+}
+
+###
+
+delete {{hostname}}/players/6453307a0b939d53b49b5722
+
+###
+
 get {{prodname}}/games
 
 ###
@@ -86,3 +124,41 @@ Content-Type: application/json
 ###
 
 delete {{prodname}}/games/6453307a0b939d53b49b5722
+
+###
+
+get {{prodname}}/players
+
+###
+
+get {{prodname}}/players/644d9a03575d076bff7ef726
+
+###
+
+post {{prodname}}/players
+Content-Type: application/json
+
+{
+    "firstName": "Caitlyn",
+    "lastName": "Rubow",
+    "phone": "NA",
+    "email": "caitRubow77@gmail.com",
+    "favoriteGenre": "Party"
+}
+
+###
+
+put {{prodname}}/players/6453307a0b939d53b49b5722
+Content-Type: application/json
+
+{
+    "firstName": "Cait",
+    "lastName": "Rubow",
+    "phone": "NA",
+    "email": "caitRubow77@gmail.com",
+    "favoriteGenre": "Party"
+}
+
+###
+
+delete {{prodname}}/players/6453307a0b939d53b49b5722
